@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +15,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+Route::get('/upload', [UploadController::class, 'index']);
+Route::get('/progress', [UploadController::class, 'progress']);
+
+Route::post('/upload/file', [UploadController::class, 'uploadFileAndStoreInDatabase'])->name('processFile');
+
+Route::get('/progress/data', [UploadController::class, 'progressForCsvStoreProcess'])->name('csvStoreProgress');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

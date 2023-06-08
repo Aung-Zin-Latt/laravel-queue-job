@@ -109,6 +109,7 @@
                         }, 1000);
                     }
                 },
+                // LifeCircle Method
                 created() {
                     this.getUploadProgress();
                 }

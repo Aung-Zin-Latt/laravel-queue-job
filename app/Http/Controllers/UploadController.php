@@ -51,6 +51,7 @@ class UploadController extends Controller
                     }
                 }
 
+                // 1000 = 300/300/300/100
                 // Breaking data, for example 10k to 5k/300
                 $dataFromcsv = array_chunk($dataFromcsv, 300);
 
